@@ -1,0 +1,98 @@
+kopanov@kopanov:~/Рабочий стол$ cat > Pets
+
+dog
+
+cat
+
+hamster^C
+
+kopanov@kopanov:~/Рабочий стол$ cat > Pack\ animals
+
+horse
+
+camel
+
+donkey^C
+
+kopanov@kopanov:~/Рабочий стол$ ls
+
+'Pack animals'   Pets
+
+
+kopanov@kopanov:~/Рабочий стол$ cat Pets Pack\ animals > Human\ friends
+
+kopanov@kopanov:~/Рабочий стол$ ls
+
+'Human friends'  'Pack animals'   Pets
+
+kopanov@kopanov:~/Рабочий стол$ mkdir Animals
+
+kopanov@kopanov:~/Рабочий стол$ mv Human\ friends Animals/
+
+kopanov@kopanov:~/Рабочий стол$ ls
+
+ Animals  'Pack animals'   Pets
+
+kopanov@kopanov:~/Рабочий стол$ cd Animals/
+
+kopanov@kopanov:~/Рабочий стол/Animals$ ls
+
+'Human friends'
+
+kopanov@kopanov:~/Рабочий стол/Animals$ sudo apt install mysql-server
+
+Чтение списков пакетов… Готово
+
+Построение дерева зависимостей… Готово
+
+Чтение информации о состоянии… Готово         
+
+Уже установлен пакет mysql-server самой новой версии (8.0.35-0ubuntu0.22.04.1).
+
+Обновлено 0 пакетов, установлено 0 новых пакетов, для удаления отмечено 0 пакетов, и 17 пакетов не обновлено.
+
+kopanov@kopanov:~/Рабочий стол/Animals$ sudo apt download python3
+
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3 amd64 3.10.6-1~22.04 [22,8 kB]
+
+Получено 22,8 kB за 2с (10,8 kB/s)        
+
+W: Загрузка выполняется от лица суперпользователя без ограничений песочницы, так как файл «/home/kopanov/Рабочий стол/Animals/python3_3.10.6-1~22.04_amd64.deb» недоступен для пользователя «_apt». - pkgAcquire::Run (13: Отказано в доступе)
+
+kopanov@kopanov:~/Рабочий стол/Animals$ ls
+
+'Human friends'   python3_3.10.6-1~22.04_amd64.deb
+
+kopanov@kopanov:~/Рабочий стол/Animals$ dpkg -i python3_3.10.6-1~22.04_amd64.deb 
+
+dpkg: ошибка: запрошенная операция требует привилегий суперпользователя
+
+kopanov@kopanov:~/Рабочий стол/Animals$ sudo !!
+
+sudo dpkg -i python3_3.10.6-1~22.04_amd64.deb 
+
+(Чтение базы данных … на данный момент установлено 198050 файлов и каталогов.)
+
+Подготовка к распаковке python3_3.10.6-1~22.04_amd64.deb …
+
+running python pre-rtupdate hooks for python3.10...
+
+Распаковывается python3 (3.10.6-1~22.04) на замену (3.10.6-1~22.04) …
+
+Настраивается пакет python3 (3.10.6-1~22.04) …
+
+running python rtupdate hooks for python3.10...
+
+running python post-rtupdate hooks for python3.10...
+
+Обрабатываются триггеры для man-db (2.10.2-1) …
+
+kopanov@kopanov:~/Рабочий стол/Animals$ rm python3_3.10.6-1~22.04_amd64.deb 
+
+rm: удалить защищённый от записи обычный файл 'python3_3.10.6-1~22.04_amd64.deb'? y
+
+kopanov@kopanov:~/Рабочий стол/Animals$ ls
+
+'Human friends'
+
+
